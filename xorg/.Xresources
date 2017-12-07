@@ -1,0 +1,68 @@
+*perl-ext-common: default,matcher
+*url-launcher:    firefox
+*matcher.button:  1
+*scrollBar:       false
+*internalBorder:  15 
+*geometry:        70x14
+*cursorBlink:     true
+
+urxvt.font:            -gbdfed-creep-regular-r-normal--16-120-96-96-m-4-iso10646-1, -wenquanyi-wenquanyi bitmap song-medium-r-normal--12-120-75-75-p-119-iso10646-1, -misc-kochi gothic-medium-r-normal--0-0-0-0-p-0-iso10646-1, -hwan-baekmuk dotum-medium-r-normal--0-0-0-0-p-0-iso10646-1
+urxvt.boldFont: 
+urxvt.italicFont:
+urxvt.boldItalicFont:
+*lineSpace:       1 
+*letterSpace:     -2
+*fading: 	  3
+*fadeColor:	  #FFFFFF
+
+*.foreground:   #e8dfd6 
+*.background:   #051519
+*.cursorColor:  #ffffff
+*.color0:       #333333
+*.color8:       #3d3d3d
+*.color1:       #f8818e
+*.color9:       #fb3d66
+*.color2:       #92d3a2
+*.color10:      #6bb48d
+*.color3:       #cbbd96
+*.color11:	#ffbb6f
+*.color4:       #8ed0ce
+*.color12:      #39a7a2
+*.color5:       #5e468c
+*.color13:      #7e62b3
+*.color6:       #31658c
+*.color14:      #6096bf
+*.color7:       #e2e2e2
+*.color15: 	#e2e2e2
+
+vim: ft=xdefaults
+*inputMethod:     ibus
+*preeditType:     OverTheSpot
+
+Xft.lcdfilter:    lcddefault
+Xft.antialias:    true
+Xft.autohint:     0
+Xft.hinting:      true
+Xft.hintstyle:    hintslight
+Xft.rgba:         rgb
+Xft.dpi:          96
+
+rofi.modi: window,drun,run
+rofi.fullscreen: true
+rofi.padding: 370
+rofi.font:	artwiz cure 8
+rofi.boldFont:  artwiz cure 8
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.bw: 0
+rofi.display-drun: run
+rofi.display-run: exec
+rofi.terminal: urxvt
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: argb:d42e3440, argb:00000000, #1aa662
+rofi.color-normal: argb:01000000, #4693CC, argb:00000000, #4693CC, #FFFFFF
+rofi.color-active: argb:00000000, #50fa7b, argb:00000000, #85fa86, #FFFFFF
+rofi.color-urgent: argb:00000000, #1aa662, argb:00000000, #1aa662, #FFFFFF
