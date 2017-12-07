@@ -1,0 +1,24 @@
+xset +fp /usr/share/fonts/misc
+xset +fp /usr/share/fonts/local
+xset +fp /usr/share/fonts/TTF
+xset +fp /usr/share/fonts/wenquanyi
+xset +fp /usr/share/fonts/adobe-source-han-sans
+xset +fp /usr/share/fonts/noto-cjk
+xset +fp ~/.local/share/fonts
+xset +fp ~/.fonts/artwiz-latin1
+xset +fp ~/.fonts/efont-unicode-bdf-0.4.2
+xset +fp ~/.fonts/cjk
+xset +fp ~/.fonts/
+xset fp rehash
+
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+fcitx-autostart
+
+xrdb $HOME/.Xresources
+urxvtd -q -o -f
+compton -b -e .5
+pulseaudio --start
+mpd & mpdscribble & 
+exec bspwm -c ~/.config/bspwm/bspwmrc
