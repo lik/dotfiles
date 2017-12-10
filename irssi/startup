@@ -1,0 +1,3 @@
+SET timestamps OFF
+STATUSBAR topic disable
+STATUSBAR info disable
