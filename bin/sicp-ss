@@ -1,0 +1,10 @@
+#!/bin/bash
+# Author: Luminarys
+# Requires: bash, slop, maim, curl, jq
+# Captures the specified window, uploads it to fuwa, then copies the URL to your clipboard and opens the picture in your browser.
+FILE=/home/wonton/Screenshots/$(date +%F-%T)-maim.png
+maim -s -p 5 "$FILE"
+URL="$(curl -F "file=@${FILE}" https://sicp.me | jq -r '.file.url')"
+echo "$URL" | xsel -p
+xdg-open "${URL}"
+notify-send "Fuwa Fuwa! ${URL}"

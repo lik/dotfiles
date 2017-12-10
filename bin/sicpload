@@ -1,0 +1,197 @@
+#!/bin/sh
+
+# This software is released into public domain.
+# It is provided "as is", without warranties or conditions of any kind.
+# Anyone is free to use, modify, redistribute and do anything with this software.
+
+# requires: POSIX sh, curl, tr
+
+# To use service other than https://sicp.me/, set the environmental variable
+# SICPLOAD_SERVICE to the upload/paste endpoint URL for that service or
+# uncomment and set the following line:
+#SICPLOAD_SERVICE=https://[your service here]/
+
+# To auto-authenticate without having to use the -U flag, either set the
+# environmental variable SICPLOAD_UUID or uncomment and set the following line:
+SICPLOAD_UUID=787655a6-5ec4-4f51-b431-b93dce4f7df0
+
+###############################################################
+# do not edit below this line unless you know what you're doing
+###############################################################
+
+service="${SICPLOAD_SERVICE:-https://sicp.me/}"
+uuid="${SICPLOAD_UUID:-}"
+prog="$(basename "$0")"
+paste=0
+stdin=1
+lang=
+
+usage() {
+	printf "Usage: %s < file\n" "$prog"
+	printf "       command | %s\n" "$prog"
+	printf "       %s file1 file2 file3 ...\n" "$prog"
+	printf "\n"
+	printf "Options (applies for all files following the flag):\n"
+	printf "  -S,  --service=ADDR  uses ADDR as the service URL instead of https://sicp.me/\n"
+	printf "  -U,  --uuid=UUID     uses UUID for authentication with the service\n"
+	printf "  -u,  --upload        upload files from this flag on to the file hosting service (default)\n"
+	printf "  -p,  --paste         paste files from this flag on to the pastebin\n"
+	printf "  -l,  --lang=LANG     syntax highlight using language LANG (implies -p)\n"
+	printf "  -l?, --lang=?        guess language to highlight (inaccurate) (implies -p)\n"
+	printf "  -L,  --lang=         do not highlight paste, serve raw plaintext (implies -p)\n"
+	printf "  -h,  --help          display this help and exit\n"
+	printf "  --                   stop processing options and treat all following arguments as filenames\n"
+	printf "\n"
+	printf "Example: %s foo -lsh bar -u baz -p quux -L qwe asd\n" "$prog"
+	printf "  will post 'foo' and 'baz' as files, 'bar' and 'quux' as .sh pastes and 'qwe' and 'asd' as raw pastes\n"
+	exit
+}
+
+upload() {
+	file=''
+	auth=''
+	if [ $# -ge 1 ]; then
+		filename="$(printf "%s" "$(basename "$1")" | tr -c -d 'a-zA-Z0-9_.+ -')"
+		if [ -n "$filename" ]; then
+			file=";filename=$filename"
+		fi
+	fi
+	if [ -n "$uuid" ]; then
+		auth="-F uuid=$uuid"
+	fi
+	if [ "$paste" -ne 0 ]; then
+		if [ -n "$lang" ]; then
+			url="$(curl -sS $auth -F "lang=$lang" -F 'paste=<-' "$service")"
+		else
+			url="$(curl -sS $auth -F 'paste=<-' "$service")"
+		fi
+	else
+		url="$(curl --progress-bar $auth -F "file=@-$file" "$service")"
+	fi
+	case "$url" in
+		http*)
+			printf "%s\n" "$url"
+			;;
+		?*)
+			printf "%s: error: %s\n" "$prog" "$url" >&2
+			return 1
+			;;
+		'')
+			return 1
+			;;
+	esac
+}
+
+upload_file() {
+	url="$(upload "$1" < "$1")"
+	if [ $? -ne 0 ]; then
+		exit 1
+	fi
+	printf "%s: %s\n" "$1" "$url"
+}
+
+while [ $# -gt 0 ]; do
+	case "$1" in
+		-h|--help)
+			usage
+			;;
+
+		-u|--upload)
+			paste=0
+			;;
+
+		-p|--paste)
+			paste=1
+			;;
+
+		-l|--lang)
+			if [ $# -ge 2 ]; then
+				lang="$2"
+				shift
+			else
+				printf "%s: option '%s' requires an argument\n" "$prog" "$1" >&2
+				exit 2
+			fi
+			paste=1
+			;;
+
+		-l?*)
+			lang="${1#-l}"
+			paste=1
+			;;
+
+		--lang=*)
+			lang="${1#*=}"
+			paste=1
+			;;
+
+		-L)
+			lang=
+			paste=1
+			;;
+
+		-U|--uuid)
+			if [ $# -ge 2 ]; then
+				uuid="$2"
+				shift
+			else
+				printf "%s: option '%s' requires an argument\n" "$prog" "$1" >&2
+				exit 2
+			fi
+			;;
+
+		-U?*)
+			uuid="${1#-U}"
+			;;
+
+		--uuid=*)
+			uuid="${1#*=}"
+			;;
+
+		-S|--service)
+			if [ $# -ge 2 ]; then
+				service="$2"
+				shift
+			else
+				printf "%s: option '%s' requires an argument\n" "$prog" "$1" >&2
+				exit 2
+			fi
+			;;
+
+		-S?*)
+			service="${1#-S}"
+			;;
+
+		--service=*)
+			service="${1#*=}"
+			;;
+
+		--)
+			shift
+			break
+			;;
+
+		-?*)
+			printf "%s: unrecognized option '%s'\n" "$prog" "$1" >&2
+			exit 2
+			;;
+
+		*)
+			stdin=0
+			upload_file "$1"
+			;;
+	esac
+
+	shift
+done
+
+while [ $# -gt 0 ]; do
+	stdin=0
+	upload_file "$1"
+	shift
+done
+
+if [ "$stdin" -ne 0 ]; then
+	upload
+	exit $?
+fi

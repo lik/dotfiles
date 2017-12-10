@@ -1,0 +1,8 @@
+#!/bin/bash
+if mpc status | awk 'NR==2' | grep -q -e playing -e paused;
+then
+	status=`mpc current`
+	echo "  $status "
+else 
+	echo "  Music playback stopped "
+fi

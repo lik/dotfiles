@@ -1,0 +1,2 @@
+#!/bin/bash
+fc-list | cut -f2 -d: | sort -
