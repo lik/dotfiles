@@ -1,0 +1,37 @@
+[admiral]
+items = ["left", "window",
+	"center", "clock",
+	"right", "battery",
+	"volume", 
+	"nazi"]
+
+[window]
+path = "window"
+
+[clock]
+path = "bash ~/bin/timeanddate"
+reload = 1
+
+[battery]
+path = "bash ~/bin/battery"
+reload = 60
+
+[volume]
+path = "bash ~/bin/volume"
+reload = 1
+
+[left]
+path = "echo '%{l}%{B#7E9C78}%{F#E8EAED}'"
+static = true
+
+[center]
+path = "echo '%{B-}%{c}%{B#223445}%{F#CBCBCB}'"
+static = true
+
+[right]
+path = "echo '%{r}%{B-}%{B#4580AD}%{F#FFFFFF}'"
+static = true
+
+[nazi]
+path = "echo '%{B-}'"
+static = true
