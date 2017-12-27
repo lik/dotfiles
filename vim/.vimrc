@@ -11,6 +11,7 @@ set autoindent
 set smartindent
 set smarttab
 set t_Co=16
+set tw=81
 
 highlight LineNR ctermfg=black
 
