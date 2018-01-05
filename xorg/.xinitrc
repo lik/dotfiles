@@ -19,5 +19,5 @@ xrdb $HOME/.Xresources
 urxvtd -q -o -f
 compton -b -e .5
 pulseaudio --start
-mpd & mpdas & 
+mpd & mpdscribble & 
 exec bspwm -c ~/.config/bspwm/bspwmrc

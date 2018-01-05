@@ -2,7 +2,7 @@
 *url-launcher:    firefox
 *matcher.button:  1
 *scrollBar:       false
-*internalBorder:  15 
+*internalBorder:  20 
 *geometry:        70x14
 *cursorBlink:     true
 
