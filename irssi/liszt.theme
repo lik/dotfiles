@@ -4,6 +4,10 @@
 # It's based on 'hv' and 'darksystem' themes
 # Contact: todesskrahe [at] gmail [dot] com
 
+# My edits:
+# The joins/parts/etc...
+# notice
+
 # TODO:
 # Maybe colors
 # More commented :)
@@ -53,7 +57,7 @@ abstracts = {
 	pubaction = "{action $*}";
 	whois = "%# $[8]0 : $1-";
 	ownnotice = "[%r$0%w(%R$1-%w)]%n ";
-	notice = "%w-%B$*%w-%n ";
+	notice = "%w- %B$*%w %n";
 	pubnotice_channel = "%w:%b$*";
 	pvtnotice_host = "%w(%b$*%w)";
 	servernotice = "%w!$*%n ";
