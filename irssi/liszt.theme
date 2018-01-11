@@ -111,4 +111,7 @@ formats = {
 		quit = "! $0 has %rquit [$2]";
 		kick = "! $0 has been %rkicked %nby {nick $2} [$3]";
 	};
+	"fe-common/irc" = {
+		chanmode_change = "! {nick $2} sets mode $1";
+	};
 };

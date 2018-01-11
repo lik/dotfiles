@@ -11,12 +11,12 @@ r="$(tput setaf 1)"
 g="$(tput setaf 2)"
 
 # screenshot utility
-#fshot='maim --hidecursor'
-fshot='scrot'
-#sshot='maim -s --hidecursor'
-sshot='scrot -bs'
-#wshot="maim -i $(xprop -root _NET_ACTIVE_WINDOW | grep -o '0x.*') --hidecursor"
-wshot='scrot -bs'
+fshot='maim --hidecursor'
+# fshot='scrot'
+sshot='maim -s --hidecursor'
+# sshot='scrot -bs'
+wshot="maim -i $(xprop -root _NET_ACTIVE_WINDOW | grep -o '0x.*') --hidecursor"
+# wshot='scrot -bs'
 
 # default delay
 secs='0'

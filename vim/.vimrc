@@ -15,8 +15,7 @@ set tw=81
 
 highlight LineNR ctermfg=black
 
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
 Plug 'lervag/vimtex'
