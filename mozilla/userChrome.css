@@ -29,8 +29,8 @@ html {
 /** DESCRIPTION : change the appearance of the tabs and others elements **/
 #TabsToolbar {
 	/*** TABS TOOLBAR ***/
-	background: #f0f0f0 !important;
-	margin-bottom: 0 !important;
+	background: #051519 !important;
+	margin-bottom: 0 !important; 
 }
 .tabbrowser-tabs:not([drag=detach]) > .tabbrowser-tab:not([pinned])[fadein] {
 	/*** TABS WIDTH (PINNED AND UNPINNED) ***/
@@ -269,4 +269,10 @@ menu.bookmark-item:not([query]):not([label="Bookmarks Toolbar"]), menuitem.bookm
 .tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-start-indicator
 .tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-end-indicator {
 	opacity: 0 !important;
+}
+
+.tab-content {
+	padding-top: 4px !important;
+	padding-left: 9px !important;
+	font-family: artwiz cure !important;
 }
