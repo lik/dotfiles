@@ -11,7 +11,7 @@
 *.italicFont:
 *.boldItalicFont:
 *lineSpace:       1 
-*letterSpace:     -6
+*letterSpace:     -6 
 *fading: 	  3
 *fadeColor:	  #FFFFFF
 

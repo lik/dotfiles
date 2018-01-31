@@ -32,14 +32,14 @@ html {
 	background: #051519 !important;
 	margin-bottom: 0 !important; 
 }
-.tabbrowser-tabs:not([drag=detach]) > .tabbrowser-tab:not([pinned])[fadein] {
+#tabbrowser-tabs:not([drag=detach]) > .tabbrowser-tab:not([pinned])[fadein] {
 	/*** TABS WIDTH (PINNED AND UNPINNED) ***/
 	/* max-width: 269px !important; */
 	max-width: none !important;
 	text-overflow: ellipsis !important;
 	overflow: hidden !important;
 }
-#TabsToolbar .tabbrowser-tabs .tab-content {
+#TabsToolbar #tabbrowser-tabs .tab-content {
 	/*** THE TABS ***/
 	border-style: solid !important;
 	border-width: 0px 0px 0px 0px !important;
@@ -253,13 +253,6 @@ menu.bookmark-item:not([query]):not([label="Bookmarks Toolbar"]), menuitem.bookm
 	opacity: 1 !important;
 }
 
-/* Make urlbar bg black in private mode */
-#main-window[privatebrowsingmode="temporary"] #urlbar
-{
-	background: black !important;
-	color: white !important;
-}
-
 /* Hide favicons */
 .tab-icon-image {
 	display: none;
@@ -269,10 +262,4 @@ menu.bookmark-item:not([query]):not([label="Bookmarks Toolbar"]), menuitem.bookm
 .tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-start-indicator
 .tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-end-indicator {
 	opacity: 0 !important;
-}
-
-.tab-content {
-	padding-top: 4px !important;
-	padding-left: 9px !important;
-	font-family: artwiz cure !important;
 }

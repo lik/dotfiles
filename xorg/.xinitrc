@@ -15,9 +15,9 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 fcitx-autostart
 
-xrdb $HOME/.Xresources
+xrdb ~/.Xresources
 urxvtd -q -o -f
 compton -b -e .5
 pulseaudio --start
 mpd & mpdscribble & 
-exec bspwm -c ~/.config/bspwm/bspwmrc
+exec bspwm -c ~/.dotfiles/bspwm/bspwmrc
