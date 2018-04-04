@@ -6,12 +6,12 @@
 *geometry:        70x14
 *cursorBlink:     true
 
-*.font:           -romeovs-scientifica-medium-r-normal--11-80-100-100-c-50-iso10646-1, -wenquanyi-wenquanyi bitmap song-medium-r-normal--12-120-75-75-p-119-iso10646-1, -misc-kochi gothic-medium-r-normal--0-0-0-0-p-0-iso10646-1, -hwan-baekmuk dotum-medium-r-normal--0-0-0-0-p-0-iso10646-1
+*.font:           -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1, -wenquanyi-wenquanyi bitmap song-medium-r-normal--12-120-75-75-p-119-iso10646-1, -misc-kochi gothic-medium-r-normal--0-0-0-0-p-0-iso10646-1, -hwan-baekmuk dotum-medium-r-normal--0-0-0-0-p-0-iso10646-1
 *.boldFont: 
 *.italicFont:
 *.boldItalicFont:
 *lineSpace:       1 
-*letterSpace:     -6 
+*letterSpace:     0
 *fading: 	  3
 *fadeColor:	  #FFFFFF
 
