@@ -28,3 +28,4 @@ bspc config normal_border_color  '#939393'
 
 bspc rule -a Firefox desktop='^2'
 bspc rule -a mpv desktop='^3'
+bspc rule -a scrcpy desktop='^3'

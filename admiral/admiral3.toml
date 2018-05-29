@@ -6,7 +6,7 @@ items = ["left", "window",
 	"nazi"]
 
 [window]
-path = "window"
+path = "mewsic"
 
 [clock]
 path = "bash ~/bin/timeanddate"
@@ -21,15 +21,15 @@ path = "bash ~/bin/volume"
 reload = 1
 
 [left]
-path = "echo '%{l}%{B#7E9C78}%{F#E8EAED}'"
+path = "echo '%{l}%{B#000000}%{F#FFFFFF}'"
 static = true
 
 [center]
-path = "echo '%{B-}%{c}%{B#223445}%{F#CBCBCB}'"
+path = "echo '%{B-}%{c}%{B#000000}%{F#FFFFFF}'"
 static = true
 
 [right]
-path = "echo '%{r}%{B-}%{B#4580AD}%{F#FFFFFF}'"
+path = "echo '%{r}%{B-}%{B#000000}%{F#FFFFFF}'"
 static = true
 
 [nazi]
