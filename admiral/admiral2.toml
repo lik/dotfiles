@@ -22,7 +22,7 @@ path = "bash ~/bin/volume"
 reload = 1
 
 [left]
-path = "echo '%{l}%{B#7E9C78}%{F#E8EAED}'"
+path = "echo '%{l}%{B#EA6562}%{F#FFFFFF}'"
 static = true
 
 [center]

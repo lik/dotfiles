@@ -11,6 +11,8 @@ set autoindent
 set smartindent
 set smarttab
 set t_Co=16
+set tabstop=4
+set shiftwidth=4
 
 highlight LineNR ctermfg=black
 

@@ -5,7 +5,6 @@ bar2 &
 nitrogen --random --set-zoom-fill &
 redshift &
 dunst &
-bspwm_floating &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 

@@ -18,6 +18,5 @@ fcitx-autostart
 xrdb ~/.Xresources
 urxvtd -q -o -f
 compton -b -e .5
-pulseaudio --start
 mpd & mpdscribble & 
 exec bspwm -c ~/.dotfiles/bspwm/bspwmrc
