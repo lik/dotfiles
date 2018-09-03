@@ -19,4 +19,5 @@ xrdb ~/.Xresources
 urxvtd -q -o -f
 compton -b -e .5
 mpd & mpdscribble & 
+xmodmap ~/.dotfiles/xmodmap/.xmodmap
 exec bspwm -c ~/.dotfiles/bspwm/bspwmrc
