@@ -81,6 +81,10 @@ super + {o,i}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
+# rotate
+super + {_,shift +}r
+	bspc node @/ -R 90
+
 #
 # preselect
 #
@@ -140,3 +144,4 @@ XF86AudioRaiseVolume
 # Mute volume
 XF86AudioMute
 	exec amixer -q -D pulse set Master toggle
+
