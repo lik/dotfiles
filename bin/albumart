@@ -1,0 +1,24 @@
+#!/bin/bash
+# Retrieves album art
+# Requires ffmpeg, imagemagick, mpc
+
+MUSIC_DIR="/home/wonton/Music/"
+TRACK_PATH=$(mpc --format "%file%" | head -n 1)
+MAX_HEIGHT=128
+X_OFFSET=10
+Y_OFFSET=30
+
+art() {
+	n30f -x $X_OFFSET -y $Y_OFFSET /tmp/cover.png &
+}
+
+# one instance already open
+if pgrep -f "n30f -x"
+	then pkill -f "n30f -x"
+	exit
+fi
+
+ffmpeg -vsync 2 -i "$MUSIC_DIR$TRACK_PATH" -y /tmp/cover.png
+convert -resize x$MAX_HEIGHT /tmp/cover.png /tmp/cover.png
+
+art

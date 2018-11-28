@@ -6,15 +6,15 @@ items = ["left", "music",
 	"nazi"]
 
 [music]
-path = "bash ~/bin/mewsic"
+path = "mewsic"
 reload = 1
 
 [clock]
-path = "bash ~/bin/timeanddate"
+path = "timeanddate"
 reload = 1
 
 [battery]
-path = "bash ~/bin/battery"
+path = "battery"
 reload = 60
 
 [volume]

@@ -1,8 +1,15 @@
 #!/bin/bash
-if mpc status | awk 'NR==2' | grep -q -e playing -e paused;
+# Sets appropriate music, either Spotify or local, output for my bar
+
+if sp | awk 'NR==1' | grep -q -e Usage;
+then
+	ARTIST=$(sp eval | grep -e "SPOTIFY_ARTIST" | grep -o '".*"' | sed 's/"//g')
+	TRACK=$(sp eval | grep -e "SPOTIFY_TITLE" | grep -o '".*"' | sed 's/"//g')
+	echo "%{A:sp play:}%{A3:albumart:}  $ARTIST - $TRACK %{A}%{A}"
+elif mpc status | awk 'NR==2' | grep -q -e playing -e paused;
 then
 	status=`mpc current`
 	echo "%{A:mpc toggle:}%{A3:albumart:}  $status %{A}%{A}"
-else 
+else
 	echo "  Music playback stopped "
 fi
