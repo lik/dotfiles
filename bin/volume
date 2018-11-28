@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "  `pamixer --get-volume`% "
+echo -e "%{A:volume-up:}%{A3:volume-down:}  `pamixer --get-volume`% %{A}%{A}"

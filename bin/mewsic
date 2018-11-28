@@ -2,7 +2,7 @@
 if mpc status | awk 'NR==2' | grep -q -e playing -e paused;
 then
 	status=`mpc current`
-	echo "  $status "
+	echo "%{A:mpc toggle:}%{A3:albumart:}  $status %{A}%{A}"
 else 
 	echo "  Music playback stopped "
 fi

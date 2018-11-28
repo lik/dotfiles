@@ -18,7 +18,7 @@ path = "bash ~/bin/battery"
 reload = 60
 
 [volume]
-path = "bash ~/bin/volume"
+path = "volume"
 reload = 1
 
 [left]

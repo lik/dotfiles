@@ -17,8 +17,8 @@ path = "bash ~/bin/battery"
 reload = 60
 
 [volume]
-path = "bash ~/bin/volume"
-reload = 1
+path = "launcher.sh"
+static = true
 
 [left]
 path = "echo '%{l}%{B#000000}%{F#FFFFFF}'"

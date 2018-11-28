@@ -1,2 +1,2 @@
 #!/bin/bash
-admiral -c ~/.config/admiral.d/admiral2.toml | lemonbar -d -g x20  -f "cure" -f "-freetype-kochismall-medium-r-normal--9-90-75-75-p-77-iso10646-1" -f "-freetype-baekmuksmall-medium-r-normal--9-90-75-75-p-38-iso10646-1" -f "-wuncon-siji-*" -B '#223445'
+admiral -c ~/.config/admiral.d/admiral2.toml | lemonbar -d -g x20  -f "cure" -f "-freetype-kochismall-medium-r-normal--9-90-75-75-p-77-iso10646-1" -f "-freetype-baekmuksmall-medium-r-normal--9-90-75-75-p-38-iso10646-1" -f "-wuncon-siji-*" -B '#223445' | sh
