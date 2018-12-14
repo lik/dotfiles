@@ -1,24 +1,35 @@
 #!/bin/bash
 # Retrieves album art
-# Requires ffmpeg, imagemagick, mpc
+# Requires ffmpeg, imagemagick, mpc, sp
 
 MUSIC_DIR="/home/wonton/Music/"
 TRACK_PATH=$(mpc --format "%file%" | head -n 1)
-MAX_HEIGHT=128
+MAX_HEIGHT=96
 X_OFFSET=10
 Y_OFFSET=30
+ARROW_X_OFFSET=$(($X_OFFSET+15))
+ARROW_Y_OFFSET=$(($Y_OFFSET-6))
 
 art() {
 	n30f -x $X_OFFSET -y $Y_OFFSET /tmp/cover.png &
+	n30f -x $ARROW_X_OFFSET -y $ARROW_Y_OFFSET /home/wonton/.dotfiles/admiral/arrow.png &
 }
 
-# one instance already open
+# one instance already open: closing
 if pgrep -f "n30f -x"
-	then pkill -f "n30f -x"
+then
+	pkill -f "n30f -x"
 	exit
 fi
 
-ffmpeg -vsync 2 -i "$MUSIC_DIR$TRACK_PATH" -y /tmp/cover.png
-convert -resize x$MAX_HEIGHT /tmp/cover.png /tmp/cover.png
+if sp | awk 'NR==1' | grep -q -e Usage;
+then
+	link=$(sp art)
+	wget -O /tmp/cover.jpg $link 
+	convert /tmp/cover.jpg /tmp/cover.png
+else
+	ffmpeg -vsync 2 -i "$MUSIC_DIR$TRACK_PATH" -y /tmp/cover.png
+fi
 
+convert -resize x$MAX_HEIGHT -bordercolor white -border 6 /tmp/cover.png /tmp/cover.png
 art

@@ -3,9 +3,16 @@
 
 if sp | awk 'NR==1' | grep -q -e Usage;
 then
+	CONCAT=""
 	ARTIST=$(sp eval | grep -e "SPOTIFY_ARTIST" | grep -o '".*"' | sed 's/"//g')
 	TRACK=$(sp eval | grep -e "SPOTIFY_TITLE" | grep -o '".*"' | sed 's/"//g')
-	echo "%{A:sp play:}%{A3:albumart:}  $ARTIST - $TRACK %{A}%{A}"
+	if [ "$ARTIST" = "" ] || [ "$TRACK" = "" ];
+	then
+		CONCAT="Switching music clients..."
+	else
+		CONCAT="$ARTIST - $TRACK"
+	fi
+	echo "%{A:sp play:}%{A3:albumart:}  $CONCAT %{A}%{A}"
 elif mpc status | awk 'NR==2' | grep -q -e playing -e paused;
 then
 	status=`mpc current`

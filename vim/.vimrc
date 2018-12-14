@@ -21,4 +21,4 @@ highlight LineNR ctermfg=black
 
 filetype plugin indent on
 
-au FileType tex autocmd BufWritePost * BuildTexPdf
+" au FileType tex autocmd BufWritePost * BuildTexPdf

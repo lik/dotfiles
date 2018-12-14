@@ -6,34 +6,35 @@
 *geometry:        70x14
 *cursorBlink:     true
 
-*.font:           -romeovs-scientifica-medium-r-normal--11-80-100-100-c-50-iso10646-1, -wenquanyi-wenquanyi bitmap song-medium-r-normal--12-120-75-75-p-119-iso10646-1, -misc-kochi gothic-medium-r-normal--0-0-0-0-p-0-iso10646-1, -hwan-baekmuk dotum-medium-r-normal--0-0-0-0-p-0-iso10646-1
-*.boldFont: 
-*.italicFont:
-*.boldItalicFont:
-*lineSpace:     1 
-*letterSpace:   -6
+*font:          -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso10646-1, -wenquanyi-wenquanyi bitmap song-medium-r-normal--12-120-75-75-p-119-iso10646-1, -misc-kochi gothic-medium-r-normal--0-0-0-0-p-0-iso10646-1, -hwan-baekmuk dotum-medium-r-normal--0-0-0-0-p-0-iso10646-1, -wuncon-siji-*
+
+*boldFont: 
+*italicFont:
+*boldItalicFont:
+*lineSpace:     3
+*letterSpace:   
 *fading:        3
 *fadeColor:     #FFFFFF
 
-*.foreground:   #e8dfd6 
-*.background:   #051519
-*.cursorColor:  #ffffff
-*.color0:       #333333
-*.color8:       #3d3d3d
-*.color1:       #f8818e
-*.color9:       #fb3d66
-*.color2:       #92d3a2
-*.color10:      #6bb48d
-*.color3:       #cbbd96
-*.color11:      #ffbb6f
-*.color4:       #8ed0ce
-*.color12:      #39a7a2
-*.color5:       #5e468c
-*.color13:      #7e62b3
-*.color6:       #31658c
-*.color14:      #6096bf
-*.color7:       #e2e2e2
-*.color15:      #e2e2e2
+*foreground:   #e8dfd6 
+*background:   #051519
+*cursorColor:  #ffffff
+*color0:       #333333
+*color8:       #3d3d3d
+*color1:       #f8818e
+*color9:       #fb3d66
+*color2:       #92d3a2
+*color10:      #6bb48d
+*color3:       #cbbd96
+*color11:      #ffbb6f
+*color4:       #8ed0ce
+*color12:      #39a7a2
+*color5:       #5e468c
+*color13:      #7e62b3
+*color6:       #31658c
+*color14:      #6096bf
+*color7:       #e2e2e2
+*color15:      #e2e2e2
 
 vim: ft=xdefaults
 *inputMethod:     ibus
