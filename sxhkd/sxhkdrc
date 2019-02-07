@@ -144,4 +144,3 @@ XF86AudioRaiseVolume
 # Mute volume
 XF86AudioMute
 	exec amixer -q -D pulse set Master toggle
-
