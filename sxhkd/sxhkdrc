@@ -35,6 +35,10 @@ super + y
 super + g
 	bspc node -s biggest
 
+# resize gaps
+super + {minus,equal}
+	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
+
 #
 # state/flags
 #
@@ -144,3 +148,4 @@ XF86AudioRaiseVolume
 # Mute volume
 XF86AudioMute
 	exec amixer -q -D pulse set Master toggle
+
