@@ -7,3 +7,4 @@ end
 
 # OPAM configuration
 # . /home/wonton/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
+set -gx PATH $PATH ~/.yarn/bin
