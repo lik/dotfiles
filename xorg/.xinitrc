@@ -16,7 +16,7 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 fcitx-autostart
 
-xrdb ~/.Xresources
+xrdb ~/.Xresources2
 urxvtd -q -o -f
 compton -b -e .5
 mpd & mpdscribble & 

@@ -105,7 +105,7 @@ abstracts = {
 };
 formats = {
   "fe-common/core" = {
-    pubmsg = "{pubmsgnick $2 {pubnick \00302$0}}$1";
+    pubmsg = "{pubmsgnick $2 {pubnick $nickcolor$0}}$1";
     join = "! $0 has %gjoined";
     part = "! $0 has %rleft [$3]";
     quit = "! $0 has %rquit [$2]";

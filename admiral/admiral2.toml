@@ -22,7 +22,7 @@ path = "volume"
 reload = 1
 
 [left]
-path = "echo '%{l}%{B#EA6562}%{F#FFFFFF}'"
+path = "echo '%{l}%{B#2DA991}%{F#FFFFFF}'"
 static = true
 
 [center]
