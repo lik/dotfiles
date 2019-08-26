@@ -6,12 +6,12 @@
 *geometry:        70x14
 *cursorBlink:     true
 
-*font:          -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso10646-1, -wenquanyi-wenquanyi bitmap song-medium-r-normal--12-120-75-75-p-119-iso10646-1, -misc-kochi gothic-medium-r-normal--0-0-0-0-p-0-iso10646-1, -hwan-baekmuk dotum-medium-r-normal--0-0-0-0-p-0-iso10646-1, -wuncon-siji-*
+*font:         -benis-lemon-medium-r-normal--10-110-75-75-m-50-iso8859-1, -wenquanyi-wenquanyi bitmap song-medium-r-normal--12-120-75-75-p-119-iso10646-1, -misc-kochi gothic-medium-r-normal--0-0-0-0-p-0-iso10646-1, -hwan-baekmuk dotum-medium-r-normal--0-0-0-0-p-0-iso10646-1, -wuncon-siji-*
 
 *boldFont: 
 *italicFont:
 *boldItalicFont:
-*lineSpace:     3
+*lineSpace:     1
 *letterSpace:   
 *fading:        3
 *fadeColor:     #FFFFFF
@@ -51,8 +51,8 @@ Xft.dpi:          96
 rofi.modi: window,drun,run
 rofi.fullscreen: true
 rofi.padding: 370
-rofi.font:	artwiz cure 8
-rofi.boldFont:  artwiz cure 8
+rofi.font: artwiz cure 8
+rofi.boldFont: artwiz cure 8
 rofi.separator-style: none
 rofi.hide-scrollbar: true
 rofi.bw: 0

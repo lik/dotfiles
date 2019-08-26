@@ -1,2 +1,2 @@
 #!/bin/bash
-amixer -q -D pulse set Master 5%- unmute
+amixer set Master 5%- unmute

@@ -21,4 +21,10 @@ highlight LineNR ctermfg=black
 
 filetype plugin indent on
 
-" au FileType tex autocmd BufWritePost * BuildTexPdf
+call plug#begin('~/.vim/plugged')
+
+Plug 'https://github.com/mxw/vim-jsx.git'
+
+call plug#end()
+
+au FileType tex autocmd BufWritePost * BuildTexPdf

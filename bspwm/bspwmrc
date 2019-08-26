@@ -26,7 +26,7 @@ bspc config normal_border_color  '#939393'
 # bspc config focused_border_color '#EEEEEE'
 # bspc config normal_border_color  '#EEEEEE'
 
-bspc rule -a Firefox desktop='^2'
+bspc rule -a firefox desktop='^2'
 bspc rule -a mpv desktop='^3'
 bspc rule -a scrcpy desktop='^3'
 bspc rule -a qemu-system-x86_64 state=floating

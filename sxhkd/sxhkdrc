@@ -36,8 +36,15 @@ super + g
 	bspc node -s biggest
 
 # resize gaps
-super + {minus,equal}
-	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
+super + minus
+	bspc config -d focused window_gap (window_gap_plus)
+# resize gaps
+super + equal
+	bspc config -d focused window_gap (window_gap_minus)
+
+# resize gaps with mouse
+# super + button{4,5}
+#	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 5 ))
 
 #
 # state/flags
@@ -133,7 +140,7 @@ super + {Left,Down,Up,Right}
 Print
 	uguush -f
 
-# screenshot selected window with maim and then upload to fuwa.se
+# screenshot selected window with maim and then upload through uguush
 alt + shift + 4
 	uguush -s
 
