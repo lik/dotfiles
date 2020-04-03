@@ -23,8 +23,6 @@ filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'https://github.com/mxw/vim-jsx.git'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
-
-au FileType tex autocmd BufWritePost * BuildTexPdf

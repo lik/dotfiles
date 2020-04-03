@@ -18,6 +18,6 @@ fcitx-autostart
 
 xrdb ~/.Xresources2
 urxvtd -q -o -f
-compton -b -e .5
+picom -b -e .5
 mpd & mpdscribble & 
 exec bspwm -c ~/.dotfiles/bspwm/bspwmrc

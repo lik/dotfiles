@@ -48,7 +48,9 @@ html {
 	font-size: 12px !important;
 	text-align: center !important;
 	text-overflow: ellipsis !important;
-	height: 10px !important;
+	/*
+	height: 8px !important;
+	*/
 	margin-top: 3px !important;
 	margin-right: -1px !important;
 	margin-bottom: -1px !important;
@@ -83,6 +85,9 @@ html {
 	border-color: rgba(0, 0, 0, 0) !important;
 	transition: all 0.3s ease-in-out;
 }
+.tab-label-container {
+	padding-bottom: 5px;
+}
 .tab-label-container[textoverflow][labeldirection="ltr"]:not([pinned]),
 .tab-label-container[textoverflow]:-moz-locale-dir(ltr):not([labeldirection]):not([pinned]) {
 	mask-image: none !important;
@@ -116,7 +121,10 @@ html {
 }
 #nav-bar {
 	/*** NAVBAR ***/
+
+	/*
 	height: 26px;
+	*/
 	background-color: rgba(255, 255, 255, 1) !important;
 	border: none !important;
 	margin-bottom: -1px !important;
@@ -168,17 +176,18 @@ html {
 	border: 1px solid #FFF !important;
 	box-shadow: none !important;
 	color: rgb(130, 130, 130) !important;
-	font-family: artwiz cure !important;
 	height: 12px !important;
-	padding: 0px !important;
+	padding-bottom: 4px !important;
 	margin-top: 0px !important;
 	margin-left: 0px !important;
 }
+/*
 #urlbar * {
-	font-family: artwiz cure !important;
-	font-size: 12px !important;
-	margin-top: -2px !important;
+font-family: artwiz cure !important;
+font-size: 12px !important;
+margin-top: -2px !important;
 }
+ */
 #PanelUI-button {
 	/*** HAMBURGER ICON ***/
 	display: none !important;
@@ -262,4 +271,25 @@ menu.bookmark-item:not([query]):not([label="Bookmarks Toolbar"]), menuitem.bookm
 .tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-start-indicator
 .tabbrowser-arrowscrollbox > .arrowscrollbox-overflow-end-indicator {
 	opacity: 0 !important;
+}
+/* Hide new tab button */
+#new-tab-button {
+	display: none;
+}
+#tracking-protection-icon-container {
+	display: none;
+}
+#urlbar-container,
+#search-container {
+	/* margin-left: 2px !important; */
+	padding: 0 !important;
+}
+#tabs-newtab-button {
+	display: none;
+}
+.urlbar-input-box {
+	font-family: artwiz cure !important;
+}
+.search-one-offs {
+	display: none !important;
 }

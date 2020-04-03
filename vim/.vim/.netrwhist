@@ -1,8 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/wonton/.BitchX'
-let g:netrw_dirhist_2='/home/wonton/Documents/kaiwenli.gitlab.io/projects'
-let g:netrw_dirhist_3='/home/wonton/Documents/kaiwenli.gitlab.io/blog/San Francisco, January 2018'
-let g:netrw_dirhist_4='/home/wonton/Documents/kaiwenli.gitlab.io/blog/Ghost Graffiti'
-let g:netrw_dirhist_5='/home/wonton/.config'
-let g:netrw_dirhist_6='/home/wonton/.config/admiral.d'
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/wonton/personal/layouts'
+let g:netrw_dirhist_5='/home/wonton/.zoom/logs'
+let g:netrw_dirhist_4='/home/wonton/.mozilla/firefox/ra1vtpv9.default/chrome'
+let g:netrw_dirhist_3='/home/wonton/.mozilla/firefox/ra1vtpv9.default'
+let g:netrw_dirhist_2='/home/wonton/.mozilla/firefox'
+let g:netrw_dirhist_1='/home/wonton/Documents/College/Notes/themes/noto/layouts/_default'
