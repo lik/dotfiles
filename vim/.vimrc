@@ -13,6 +13,8 @@ set smarttab
 set t_Co=16
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4   " Sets the number of columns for a TAB
+set expandtab       " Expand TABs to spaces
 set list
 set listchars=tab:¦\ 
 
@@ -26,3 +28,5 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
+
+hi! CocWarningSign ctermfg=White guifg=#ff922b

@@ -1,0 +1,184 @@
+/* If a CSS var is not here then it's based on the ones defined in colors.ini */
+:root {
+	--accent: #4ac489;
+	--normal-font: "AktivGrotesk-Medium";
+	--bold-font: "AktivGrotesk-Medium";
+	--bar-height: 88px;
+}
+
+body {
+	font-family: var(--normal-font);
+}
+
+/* Bottom player bar */
+.view-player {
+	border-top: 0 !important;
+}
+
+/* Sub-class of .view-player */
+.player-bar-wrapper {
+	background-color: var(--accent);
+}
+
+/* Ugly stuff after player stuff */
+.view-player .text-container .text-item-container .text-item .scroll-text-container:before,
+.view-player .text-container .text-item-container .text-item .scroll-text-container:after {
+	background: none !important;
+}
+
+/* Track name - make same as artist name  */
+.view-player .track a {
+	color: var(--modspotify_secondary_fg);
+}
+
+/* Play button same as other stuff in bottom bar */
+.view-player .player-controls-container .controls .button-play {
+	color: var(--modspotify_secondary_fg);
+}
+
+/* Small cover Big cover mechanism */
+/*
+.now-playing.cover-size-transition.active.image-expanded #now-playing-image-small {
+	display: none;
+}
+
+.now-playing.cover-size-transition.active.image-expanded .cover-image-link-wrapper {
+	flex: 0 1 10px;
+}
+
+#view-now-playing a.image {
+	overflow: visible !important;
+}
+
+.view-player .cover-image-container {
+	position: fixed !important;
+	left: 0;
+	bottom: 0;
+}
+
+.view-player .now-playing .cover-image-link,
+.view-player .now-playing .cover-image-link figure {
+	width: var(--bar-height);
+	height: var(--bar-height);
+}
+
+#now-playing-image-small .cover-image {
+	width: var(--bar-height);
+	height: var(--bar-height);
+}
+
+.view-player .now-playing .cover-image-link-wrapper {
+	flex: 0 1 calc(var(--bar-height) + 15px);
+}
+
+.text-container {
+	z-index: 3;
+}
+
+.view-player .now-playing .now-playing-text-spacer {
+	flex: 0 0 0;
+}
+*/
+
+/** Header stuff **/
+
+/* Remove gradient */
+.Header__background,
+.Header__background-color,
+.GlueHeader__background-color {
+	background-image: none;
+}
+
+/* Remove weird dots https://files.catbox.moe/4qdi12.png */
+.glue-page-header__background-color {
+	background-image: none;
+}
+
+.GlueHeader__background-overlay,
+.Header__background-color {
+	background-color: var(--modspotify_main_bg);
+}
+
+.Header__content-wrapper {
+	background-color: var(--modspotify_sidebar_and_player_bg);
+}
+
+/* Title margin (allow for spacing for "Album" or "Playlist" labels) */
+.Header__title,
+.glue-page-header__title {
+	margin-top: 10px !important;
+}
+
+.Header__title-text-inner {
+	font-family: var(--bold-font);
+}
+
+.Header__content .Header__title-text {
+	font-size: 60px;
+	line-height: 56px;
+	/* Font cuts off otherwise */
+	padding: 3px 0;
+}
+
+/* Buttons */
+.Button,
+.button.button-green {
+	border-radius: 0;
+	color: var(--modspotify_secondary_fg);
+}
+
+.Button--style-icon-stroke:after,
+.button.button-icon-with-stroke::after {
+	border-radius: 0;
+	box-shadow: none !important;
+}
+
+/* Change avatar */
+.avatar {
+	background-image: url("https://files.catbox.moe/nzxb16.jpg") !important;
+}
+
+/* No square outline */
+.Button--style-icon-stroke,
+.button.button-icon-with-stroke,
+.button.button-icon-with-stroke:not(:disabled):hover,
+.Button--style-icon-stroke:not(:disabled):hover {
+	box-shadow: none;
+}
+
+/* Filled-in heart for liked songs/albums */
+.spoticon-heart-active-16::before,
+.nft-enabled .added .button.button-icon-only.button-add,
+.nft-enabled .button-header-add.just-changed::before,
+.nft-enabled .button-header-add.added::before,
+.nft-enabled .button-header-add.added:hover::before,
+.nft-enabled .button-header-add.added.just-changed::before {
+	color: #ff5875;
+}
+
+/* Do not change filled-in stars' color when hovering over */
+.tl-row:hover .tl-save .button:not([disabled])::before,
+.tl-row.contextmenu-active .tl-save .button:not([disabled])::before {
+	color: inherit;
+}
+
+/* Don't display username */
+span.username {
+	display: none;
+}
+
+/** Table cell **/
+span.TableCellSong__track-name {
+	color: var(--modspotify_secondary_fg);
+}
+
+.TableCell {
+	color: var(--modspotify_main_fg);
+}
+
+/** Context Menu **/
+
+/* Remove white glowy shadow */
+.context-menu {
+	box-shadow: none;
+}
