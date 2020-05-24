@@ -26,13 +26,18 @@ filetype plugin indent on
 call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'easymotion/vim-easymotion'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'ap/vim-css-color'
 Plug 'itchyny/vim-cursorword'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
-hi! CocWarningSign ctermfg=White guifg=#ff922b
+hi! CocWarningSign ctermfg=White
+
+"transparent status line bg
+hi StatusLine ctermbg=None cterm=None 
 
 " use <tab> for trigger completion and navigate to the next complete item
 function! s:check_back_space() abort
