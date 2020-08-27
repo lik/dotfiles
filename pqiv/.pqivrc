@@ -1,3 +1,6 @@
 [options]
 hide-info-box=1
 box-colors=#000000:#FFFFFF
+
+[keybindings]
+4 { set_interpolation_quality(0) }
