@@ -14,6 +14,7 @@ g="$(tput setaf 2)"
 fshot='maim --hidecursor'
 # fshot='scrot'
 sshot='maim -s --hidecursor'
+# sshot='maim -s --hidecursor --capturebackground --padding=10'
 # sshot='scrot -bs'
 wshot="maim -i $(xprop -root _NET_ACTIVE_WINDOW | grep -o '0x.*') --hidecursor"
 # wshot='scrot -bs'
@@ -22,8 +23,8 @@ wshot="maim -i $(xprop -root _NET_ACTIVE_WINDOW | grep -o '0x.*') --hidecursor"
 secs='0'
 
 # image host
-usehost='0x0'
-hosts='uguu teknik 0x0 mixtape ptpb maxfile lewd'
+usehost='pomf'
+hosts='uguu teknik 0x0 mixtape ptpb maxfile lewd catbox pomf'
 shorteners='waaai 0x0 ptpb'
 
 ## EXIT IF NO ARGUMENTS ARE FOUND
@@ -111,6 +112,8 @@ upload() {
       maxfile) upurl='https://maxfile.ro/static/upload.php' ;;
       mixtape) upurl='https://mixtape.moe/upload.php' ;;
       lewd) upurl='https://lewd.se/api.php?d=upload-tool' ;;
+      catbox) upurl='https://catbox.moe/user/api.php' ;;
+      pomf) upurl='https://pomf.cat/upload.php' ;;
     esac
 
     case "${useshortener}" in
@@ -146,6 +149,11 @@ upload() {
         result="$(echo "https://d.maxfile.ro/${result}")"
       elif [ "${usehost}" = 'lewd' ]; then
         result="$(curl -sf -F file="@${FILE}" "${upurl}")"
+      elif [ "${usehost}" = 'catbox' ]; then
+        key=$(cat "$HOME/.catbox")
+        result="$(curl -sf -F "reqtype=fileupload" -F "userhash=${key}" -F "fileToUpload=@${FILE}" "${upurl}")"
+      elif [ "${usehost}" = 'pomf' ]; then
+        result="$(curl -sf -F files[]="@${FILE}" "${upurl}" | jq -c -r --arg base "https://a.pomf.cat/" '$base + .files[].url')"
       fi
       if [ "${useshortener}" = 'waaai' ]; then
         tempresult="$(curl -sf -F url="${result}" "${shorturl}")"
