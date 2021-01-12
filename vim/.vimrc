@@ -10,13 +10,14 @@ set ignorecase
 set autoindent
 set smartindent
 set smarttab
-set t_Co=16
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 set list
 set listchars=tab:¦\ 
+
+colorscheme peachpuff " correct Xresources colors
 
 highlight SpecialKey ctermfg=black
 highlight LineNR ctermfg=black
